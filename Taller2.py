@@ -113,7 +113,7 @@ incremento = float(input("Ingrese el incremento anual del terreno en %: "))
 devaluacion = float(input("Ingrese la devaluación anual del automóvil en %: "))
 
 incremento = (((precio_autoTerreno * incremento) / 100) * 3) / 2
-devaluacion= ((precio_autoTerreno * devaluacion) / 100) * 3
+devaluacion = ((precio_autoTerreno * devaluacion) / 100) * 3
 print(f"La mitad del incremento del terreno en 3 años es de: ${incremento}")
 print(f"La devaluación del automóvil en 3 años es de: ${devaluacion}")
 
@@ -121,3 +121,26 @@ if devaluacion < incremento:
     print("Al cliente le conviene comprar el automóvil")
 else:
     print("Al cliente le conviene comprar el terreno")
+
+# 6. En una fábrica de computadoras se planea ofrecer a los clientes un
+# descuento que dependerá del número de computadoreas que compre. Si las
+# computadoras son menos de cinco se les dará un 10% de descuento sobre el
+# total de la compra; si el número de computadoras es mayor o igual a cinco
+# pero menos de diez se le otorga un 20% de descuento; y si son 10 o más se
+# les da un 40%. El precio de cada computadora es de $11.000.
+
+num_computadores = int(input("Ingrese número de computadores a comprar: "))
+total_comp = num_computadores * 11000
+
+if num_computadores > 10:
+    descuento = total_comp - (total_comp * 0.4)
+    print(f"El total con el 40% de descuento es de: ${descuento}")
+    print(f"El descuento del 40% es de: ${total_comp * 0.4}")
+elif num_computadores >= 5 and num_computadores < 10:
+    descuento = total_comp - (total_comp * 0.2)
+    print(f"El total con el 20% de descuento es de: ${descuento}")
+    print(f"El descuento del 20% es de: ${total_comp * 0.2}")
+else:
+    descuento = total_comp - (total_comp * 0.1)
+    print(f"El total con el 10% de descuento es de: ${descuento}")
+    print(f"El descuento del 10% es de: ${total_comp * 0.1}")
