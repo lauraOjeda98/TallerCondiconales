@@ -6,6 +6,7 @@ Created on Thu Sep  9 11:58:14 2021
 """
 
 import random
+import numpy as np
 
 # Taller condiconales
 
@@ -67,3 +68,35 @@ else:
     monto_interes = monto + interes
     print(f"El interés del 2% es: ${interes:,}")
     print(f"La cuota con un 2% es: ${monto_interes:,}")
+
+# 4. Una fábrica ha sido sometida a un programa de control de contaminación
+# para lo cual se efectúa una revisión de los puntos de contaminación
+# generados por la fábrica. El programa de control de contaminación consiste
+# en medir los puntos que emite la fábrica en cinco días de una semana y si el
+# promedio es superior a los 170 puntos entonces tendrá la sanción de parar su
+# producción por una semana y una multa del 50% de las ganancias diarias
+# cuando no se detiene la producción. Si el promedio obtenido de puntos es de
+# 170 o menos entonces no tendrá ni sanción ni multa. El dueño de la fábrica
+# desea saber cuanto dinero perderá después de ser sometido a la revisión.
+
+puntos_dias = []
+ganancias_diarias = []
+
+for i in range(5):
+    puntos_dias.append(int(input(f"Ingrese los puntos del día {i+1}: ")))
+    ganancias_diarias.append(int(input(f"Ingrese las ganancias del día {i+1}: ")))
+
+puntos_total = sum(puntos_dias)
+ganancias_total = sum(ganancias_diarias)
+
+if puntos_total > 170:
+    multa = ganancias_total * 0.5
+    print(f"El promedio de puntos emitidos es de: {puntos_total}")
+    print("Esta fábrica deberá tener una sanción de una semana")
+    print(f"Las ganancias totales es de: ${ganancias_total:,}")
+    print(f"La multa a pagar es de: ${multa:,}")
+else:
+    multa = 0
+    print(f"Las ganancias totales es de: ${ganancias_total:,}")
+    print("Esta fábrica no tendrá sanción")
+    print(f"La multa a pagar es de: ${multa:,}")
