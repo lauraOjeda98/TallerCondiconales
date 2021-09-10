@@ -144,3 +144,24 @@ else:
     descuento = total_comp - (total_comp * 0.1)
     print(f"El total con el 10% de descuento es de: ${descuento}")
     print(f"El descuento del 10% es de: ${total_comp * 0.1}")
+
+# 7. Un proveedor de estéreos ofrece un descuento del 10% sobre el precio
+# sin IVA, de algún aparato si este cuesta $2000 o más. Además,
+# independientemente de esto, ofrece un 5% de descuento si la marca es NOSY.
+# Determinar cuanto pagará, con IVA incluido, un cliente cualquiera por la
+# compra de su aparato. IVA es del 16%.
+
+precio_aparato = float(input("Ingrese precio del aparato: $"))
+marca = input("Ingrese marca del aparato: ")
+
+if (marca == "NOSY" or marca == "nosy") and precio_aparato >= 2000:
+    descuentoAparato = precio_aparato * 0.15
+elif precio_aparato >= 2000:
+    descuentoAparato = precio_aparato * 0.1
+
+total = precio_aparato - descuentoAparato
+total_iva = total + (total * 0.16)
+
+print(f"El total a pagar con IVA y descuento es: ${total_iva:,}")
+print(f"El total con descuento es: ${total:,}")
+print(f"Con un descuento de ${descuentoAparato:,}")
