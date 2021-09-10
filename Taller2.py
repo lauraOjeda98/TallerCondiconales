@@ -100,3 +100,24 @@ else:
     print(f"Las ganancias totales es de: ${ganancias_total:,}")
     print("Esta fábrica no tendrá sanción")
     print(f"La multa a pagar es de: ${multa:,}")
+
+# 5. Una persona se encuentra con un problema de comprar un automóvil o un
+# terreno, los cuales cuestan exactamente lo mismo. Sabe que mientras el
+# automóvil se devalúa, con el terreno sucede lo contrario. Esta persona
+# comprará el automóvil si al cabo de tres años la devaluación de este no es
+# mayor que la mitad del incremento del valor del terreno. Ayúdale a esta
+# pesona a determinar si debe o no comprar el automóvil.
+
+precio_autoTerreno = float(input("Ingrese el precio del automóvil y del terreno: $"))
+incremento = float(input("Ingrese el incremento anual del terreno en %: "))
+devaluacion = float(input("Ingrese la devaluación anual del automóvil en %: "))
+
+incremento = (((precio_autoTerreno * incremento) / 100) * 3) / 2
+devaluacion= ((precio_autoTerreno * devaluacion) / 100) * 3
+print(f"La mitad del incremento del terreno en 3 años es de: ${incremento}")
+print(f"La devaluación del automóvil en 3 años es de: ${devaluacion}")
+
+if devaluacion < incremento:
+    print("Al cliente le conviene comprar el automóvil")
+else:
+    print("Al cliente le conviene comprar el terreno")
