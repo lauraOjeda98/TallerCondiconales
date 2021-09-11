@@ -6,7 +6,6 @@ Created on Thu Sep  9 11:58:14 2021
 """
 
 import random
-import numpy as np
 
 # Taller condiconales
 
@@ -80,14 +79,14 @@ else:
 # desea saber cuanto dinero perderá después de ser sometido a la revisión.
 
 puntos_dias = []
-ganancias_diarias = []
+ganancias_dia = []
 
 for i in range(5):
     puntos_dias.append(int(input(f"Ingrese los puntos del día {i+1}: ")))
-    ganancias_diarias.append(int(input(f"Ingrese las ganancias del día {i+1}: ")))
+    ganancias_dia.append(int(input(f"Ingrese las ganancias del día {i+1}: ")))
 
 puntos_total = sum(puntos_dias)
-ganancias_total = sum(ganancias_diarias)
+ganancias_total = sum(ganancias_dia)
 
 if puntos_total > 170:
     multa = ganancias_total * 0.5
@@ -108,12 +107,12 @@ else:
 # mayor que la mitad del incremento del valor del terreno. Ayúdale a esta
 # pesona a determinar si debe o no comprar el automóvil.
 
-precio_autoTerreno = float(input("Ingrese el precio del automóvil y del terreno: $"))
+precio_autoT = float(input("Ingrese el valor del automóvil y terreno: $"))
 incremento = float(input("Ingrese el incremento anual del terreno en %: "))
 devaluacion = float(input("Ingrese la devaluación anual del automóvil en %: "))
 
-incremento = (((precio_autoTerreno * incremento) / 100) * 3) / 2
-devaluacion = ((precio_autoTerreno * devaluacion) / 100) * 3
+incremento = (((precio_autoT * incremento) / 100) * 3) / 2
+devaluacion = ((precio_autoT * devaluacion) / 100) * 3
 print(f"La mitad del incremento del terreno en 3 años es de: ${incremento}")
 print(f"La devaluación del automóvil en 3 años es de: ${devaluacion}")
 
@@ -165,3 +164,33 @@ total_iva = total + (total * 0.16)
 print(f"El total a pagar con IVA y descuento es: ${total_iva:,}")
 print(f"El total con descuento es: ${total:,}")
 print(f"Con un descuento de ${descuentoAparato:,}")
+
+# 8. Una empresa quiere hacer una compra de varias piezas de la misma clase a
+# una fábrica de refacciones. La empresa, dependiendo del monto total de la
+# compra, decidirá que hacer para pagar al fabricante. Si el monto total de la
+# compra excede de $500.000 la empresa tendrá la capacidad de invertir de su
+# propio dinero un 55% del monto de la compra, pedir prestado al banco un 30%
+# y el resto lo pagará solicitando un crédito al fabricante. Si el monto total
+# de la compra no excede de $500.00 la empresa tendrá capacidad de invertir de
+# su propio dinero un 70% y el restante 30% lo pagará solicitando crédito
+# al fabricante. El fabricante cobra por concepto de interes un 20% sobre la
+# cantidad que se le pague a crédito. Obtener la cantidad a inverir, valor del
+# préstamo, valor del crédito y los intereses.
+
+monto_compra = float(input("Ingrese monto total de la compra: $"))
+
+if monto_compra > 500000:
+    inversion = monto_compra * 0.55
+    prestamo = monto_compra * 0.3
+    credito = monto_compra * 0.15
+else:
+    inversion = monto_compra * 0.7
+    prestamo = 0
+    credito = monto_compra * 0.3
+
+interes = credito * 0.2
+
+print(f"La cantidad a invertir es de: ${inversion:,}")
+print(f"El valor del préstamo es de: ${prestamo:,}")
+print(f"El valor del crédito es de: ${credito:,}")
+print(f"Los intereses son de: ${interes}")
