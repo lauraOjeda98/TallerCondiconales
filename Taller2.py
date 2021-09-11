@@ -194,3 +194,19 @@ print(f"La cantidad a invertir es de: ${inversion:,}")
 print(f"El valor del préstamo es de: ${prestamo:,}")
 print(f"El valor del crédito es de: ${credito:,}")
 print(f"Los intereses son de: ${interes}")
+
+# 9. Leer 2 números; si son iguales que lo multiplique, si el primero es mayor
+# que el segundo que los reste y sino que los sume.
+
+num = float(input("Ingrese primer número: "))
+num2 = float(input("Ingrese segundo número: "))
+
+if num == num2:
+    resultado = num * num2
+    print(f"Los números se multiplicaron y su resultado es: {resultado}")
+elif num > num2:
+    resultado = num - num2
+    print(f"Los números se restan y su resultado es: {resultado}")
+else:
+    resultado = num + num2
+    print(f"Los números se suman y su resultado es: {resultado}")
