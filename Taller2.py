@@ -210,3 +210,13 @@ elif num > num2:
 else:
     resultado = num + num2
     print(f"Los números se suman y su resultado es: {resultado}")
+
+# 10. Leer tres números diferentes e imprimir el número mayor de los tres
+
+numeros = []
+
+for i in range(3):
+    numeros.append(float(input(f"Ingrese el número {i+1}: ")))
+
+mayor = max(numeros, key=float)
+print(f"El número mayor es: {mayor}")
